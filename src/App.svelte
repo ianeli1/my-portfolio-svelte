@@ -1,43 +1,47 @@
 <script lang="ts">
   import TopBar from "./components/TopBar.svelte";
   import EpicBox from "./components/EpicBox.svelte";
-  export let name: string;
+  import InfoList from "./components/InfoList.svelte";
+  import Projects from "./screens/Projects.svelte";
+  import Home from "./screens/Home.svelte";
+  import type { Types } from "./types";
   const btns = [
     { text: "home", onClick: () => console.log("pp") },
     { text: "principal" },
     { text: "example" },
+  ];
+  const fields: Types.Field[] = [
+    { title: "title", text: "iasjfoasgoasgbsag" },
+    { title: "title", text: "iasjfoasgoasgbsag" },
+    { title: "title", text: "iasjfoasgoasgbsag" },
+    { title: "title", text: "iasjfoasgoasgbsag" },
+    { title: "title", text: "iasjfoasgoasgbsag" },
   ];
 </script>
 
 <style>
   main {
     text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    overflow: hidden;
   }
 
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
+  div {
+    flex-grow: 1;
+    max-width: 100%;
+    box-sizing: content-box;
+    overflow-y: auto;
   }
 </style>
 
 <main>
   <TopBar elements={btns} />
-  <h1>Hello {name}!</h1>
-  <p>
-    Visit the
-    <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
-    to learn how to build Svelte apps.
-  </p>
-  <EpicBox elements={btns} title="Hello world" />
+  <div>
+    <Home />
+  </div>
 </main>

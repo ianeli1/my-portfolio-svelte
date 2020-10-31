@@ -1,7 +1,7 @@
 <script lang="typescript">
   import type { element } from "svelte/internal";
   import type { Types } from "../types";
-  export let title: string;
+  export let title: string = "";
   export let elements: Types.BasicElement[];
 </script>
 
@@ -48,7 +48,10 @@
 </style>
 
 <section>
-  <p>{title}</p>
+  {#if title}
+    <p>{title}</p>
+  {/if}
+
   {#each elements as element}
     <h1 class={element.onClick ? 'clickable' : ''} on:click={element.onClick}>
       {element.text}

@@ -16,11 +16,11 @@
   section {
     display: flex;
     height: 3rem;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
     background-color: #222;
+    width: 100vw;
   }
   h1 {
     font-size: 2rem;
